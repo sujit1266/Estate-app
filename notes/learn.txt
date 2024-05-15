@@ -1,0 +1,9 @@
+prisma----relitations (done).
+//what library i use
+1. bcrypt--for password hasing.
+2. prisma(not a library)---it's a ORM(Object Relation Mapper) for node js enviroment.
+3. cookie-parser---for sending the cookie.
+4. jsonwebtoken.
+5. Openssl rand -base64 32 (for generating secret key).
+6. cors(a middleware)--- we cant do api post request in local server(like "http://localhost:5000") thats why we need this middleware.
+nodemon  -w . -w .env index.js(for starting the nodemon server adding .env file)
