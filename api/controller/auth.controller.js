@@ -47,17 +47,19 @@ export const login = async (req, res) => {
 
           const age = 1000 * 60 * 60 * 24 * 7;
           const token = jwt.sign({
-               id: user.id
+               id: user.id,
+               isAdmin: true
           }, process.env.JWT_SECRET_KEY,
           {expiresIn: age}
           );
 
+          const {password: userPassword, ...userInfo}=user;
 
-          res.cookie("Token", token, {
+          res.cookie("token", token, {
                httpOnly: true, // client site javascript can't accesee
                // secure : true (for http server but for now we use localhost)
                maxAge: age,
-          }).status(200).json("Login successful");
+          }).status(200).json(userInfo);
 
      } catch (err) {
           console.log(err);
@@ -67,5 +69,5 @@ export const login = async (req, res) => {
 
 export const logout = (req, res) => {
      //db operations
-     res.clearCookie("Token").status(200).json({message : "Logout successfuly"});
+     res.clearCookie("token").status(200).json({ message: "Logout Successful" });
 }
