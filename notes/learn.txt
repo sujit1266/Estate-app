@@ -7,3 +7,7 @@ prisma----relitations (done).
 5. Openssl rand -base64 32 (for generating secret key).
 6. cors(a middleware)--- we cant do api post request in local server(like "http://localhost:5000") thats why we need this middleware.
 nodemon  -w . -w .env index.js(for starting the nodemon server adding .env file)
+7. widget (Create a context to manage the script loading state)
+8. use {cloudinary} for uploading user avatar
+9. after changes anything in prisma scheema you have to run a command --- npx prisma db push
+10. use react-quill to decorate the addpost page.
